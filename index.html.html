@@ -1,13 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
-  <title>Assistente de Manutenção</title>
+  <meta charset="UTF-8">
+  <title>Login - Assistente de Manutenção</title>
 </head>
 <body>
 
-<h2>Assistente de Manutenção ☕</h2>
-<button onclick="login()">Login</button>
+  <h2>Login do Técnico ☕🔧</h2>
 
-<script src="app.js"></script>
+  <input type="email" id="email" placeholder="Email do técnico"><br><br>
+  <input type="password" id="senha" placeholder="Senha"><br><br>
+
+  <button onclick="login()">Entrar</button>
+
+  <p id="mensagem"></p>
+
+  <script type="module" src="app.js"></script>
 </body>
 </html>
