@@ -2,32 +2,36 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebas
 import { getAuth, signInWithEmailAndPassword } from 
 "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 
-// 🔥 Configuração do Firebase (use a SUA)
 const firebaseConfig = {
   apiKey: "AIzaSyCU34TdZmsOw6T8MX36jcLoqW-qgOKPzik",
   authDomain: "assistentemanutencaocafe.firebaseapp.com",
   projectId: "assistentemanutencaocafe"
 };
 
-// Inicializa Firebase
 const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
+const auth = getAuth();
 
-// Função de login
+// 🔐 LOGIN
 window.login = function () {
-  const email = document.getElementById("email").value;
-  const senha = document.getElementById("senha").value;
+  const email = document.getElementById("email").value.trim();
+  const senha = document.getElementById("senha").value.trim();
   const msg = document.getElementById("mensagem");
 
+  if (!email || !senha) {
+    msg.innerText = "Preencha email e senha";
+    msg.style.color = "red";
+    return;
+  }
+
   signInWithEmailAndPassword(auth, email, senha)
-    .then(() => {
+    .then((userCredential) => {
       msg.innerText = "Login realizado com sucesso!";
       msg.style.color = "green";
-
-      // Aqui depois vamos redirecionar para o sistema
+      console.log("Usuário:", userCredential.user.email);
     })
     .catch((error) => {
-      msg.innerText = "Erro: " + error.message;
+      console.error(error.code, error.message);
+      msg.innerText = "Erro: " + error.code;
       msg.style.color = "red";
     });
 };
