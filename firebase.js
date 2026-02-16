@@ -4,9 +4,9 @@ import { getAuth, signInWithEmailAndPassword } from
 
 // 🔥 Configuração do Firebase (use a SUA)
 const firebaseConfig = {
-  apiKey: "SUA_API_KEY",
-  authDomain: "SEU_DOMINIO.firebaseapp.com",
-  projectId: "SEU_PROJECT_ID"
+  apiKey: "AIzaSyCU34TdZmsOw6T8MX36jcLoqW-qgOKPzik",
+  authDomain: "assistentemanutencaocafe.firebaseapp.com",
+  projectId: "assistentemanutencaocafe"
 };
 
 // Inicializa Firebase
