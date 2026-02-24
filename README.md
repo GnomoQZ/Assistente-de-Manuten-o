@@ -36,7 +36,15 @@ Projeto criado com fins de estudo e portfólio profissional, aplicando conceitos
 ---
 
 ## 📂 Estrutura do Projeto
-
+sistema-manutencao/
+├── backend/
+│ ├── server.js
+│ └── package.json
+├── frontend/
+│ ├── index.html
+│ ├── dashboard.html
+│ └── painel.html
+└── README.md
 ---
 
 ## ▶️ Como Executar o Projeto
